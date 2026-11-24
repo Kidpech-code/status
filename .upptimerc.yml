@@ -1,31 +1,124 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# status.twentcode.com — Upptime (MIT, https://upptime.js.org), owner's choice 2026-11-24.
+# Checks run from GitHub Actions every 5 minutes, outside our 3 servers, so the page stays up and honest when they are down.
+# Source of truth: macbook-dev-server repo status-upptime/ (copied into Kidpech-code/status). Deploy steps: README.md.
+owner: Kidpech-code
+repo: status
+
+# downtime opens a GitHub issue assigned here (GitHub emails the owner) and closes it on recovery
+assignees:
+  - Kidpech-code
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: เว็บ Office AI
+    slug: ai
+    url: https://ai.twentcode.com
+  - name: API โมเดลภาษา (llm.twentcode.com)
+    slug: llm-api
+    url: https://llm.twentcode.com/healthz
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+    __dangerous__body_degraded: '"maintenance":true'
+  - name: kidpech.app
+    slug: kidpech-app
+    url: https://kidpech.app
+  - name: API ของ kidpech.app
+    slug: kidpech-api
+    url: https://api.kidpech.app/health
+    __dangerous__body_down_if_text_missing: '"status":"healthy"'
+  - name: ออฟฟิศออนไลน์ (office.twentcode.com)
+    slug: office
+    url: https://office.twentcode.com
+  - name: แชต Matrix
+    slug: matrix
+    url: https://matrix.twentcode.com/_matrix/client/versions
+  - name: Dev Office (office.kidpech.app)
+    slug: dev-office
+    url: https://office.kidpech.app
+  - name: MyShift
+    slug: my-shift
+    url: https://my-shift.twentcode.com
+  - name: MyShift อ่านตาราง (OCR)
+    slug: my-shift-ocr
+    url: https://my-shift.twentcode.com/__local-ocr/health
+    __dangerous__body_down_if_text_missing: '"ok":true'
+  - name: twentcode.com
+    slug: twentcode
+    url: https://twentcode.com
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.twentcode.com
+  logoUrl: https://status.twentcode.com/favicon.svg
+  favicon: https://status.twentcode.com/favicon.svg
+  name: Twentcode Status
+  introTitle: "สถานะบริการ Twentcode"
+  introMessage: ตรวจจากภายนอกทุก 5 นาที · เหตุขัดข้องและการปิดปรับปรุงจะแสดงที่นี่พร้อมเวลาเริ่ม–จบ
+  theme: light
   navbar:
-    - title: Status
+    - title: สถานะ
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Office AI
+      href: https://ai.twentcode.com
+    - title: kidpech.app
+      href: https://kidpech.app
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+i18n:
+  locale: th-TH
+  activeIncidents: เหตุขัดข้องที่กำลังแก้
+  allSystemsOperational: ทุกบริการทำงานปกติ
+  incidentReport: "รายงานเหตุ #$NUMBER →"
+  activeIncidentSummary: เริ่ม $DATE · อัปเดต $POSTS ครั้ง
+  incidentTitle: รายละเอียดเหตุ #$NUMBER
+  incidentDetails: รายละเอียดเหตุ
+  incidentFixed: แก้แล้ว
+  incidentOngoing: กำลังแก้
+  incidentOpenedAt: เริ่มเมื่อ
+  incidentClosedAt: จบเมื่อ
+  incidentViewOnGitHub: ดูและติดตามบน GitHub
+  incidentCommentSummary: $AUTHOR · $DATE
+  incidentBack: ← กลับไปหน้ารวม
+  pastIncidents: เหตุที่ผ่านมา
+  pastIncidentsResolved: แก้ใน $MINUTES นาที · อัปเดต $POSTS ครั้ง
+  liveStatus: สถานะตอนนี้
+  overallUptime: "ใช้งานได้ $UPTIME"
+  overallUptimeTitle: ใช้งานได้
+  averageResponseTime: "ตอบเฉลี่ย $TIMEms"
+  averageResponseTimeTitle: เวลาตอบเฉลี่ย
+  sevelDayResponseTime: เวลาตอบ 7 วัน
+  responseTimeMs: เวลาตอบ (ms)
+  up: ปกติ
+  down: ขัดข้อง
+  degraded: ช้า/บางส่วน
+  ms: ms
+  loading: กำลังโหลด
+  navGitHub: GitHub
+  footer: หน้านี้เป็น [open source]($REPO) ทำงานด้วย [Upptime](https://upptime.js.org)
+  rateLimitExceededTitle: เปิดหน้านี้บ่อยเกินไป
+  rateLimitExceededIntro: GitHub จำกัดการอ่านข้อมูลต่อชั่วโมงต่อเครื่อง รอสักครู่แล้วเปิดใหม่ หรือใส่ GitHub token ของคุณเอง
+  rateLimitExceededWhatDoesErrorMean: ข้อความนี้หมายถึงอะไร
+  rateLimitExceededErrorMeaning: หน้านี้อ่านสถานะสดจาก GitHub ซึ่งให้แต่ละเครื่องอ่านได้ 60 ครั้งต่อชั่วโมง และเครื่องนี้ใช้ครบแล้ว
+  rateLimitExceededErrorHowCanFix: แก้อย่างไร
+  rateLimitExceededErrorFix: รอราว 1 ชั่วโมง หรือใส่ GitHub Personal Access Token เพื่ออ่านได้อีก 5,000 ครั้งต่อชั่วโมง
+  rateLimitExceededGeneratePAT: วิธีสร้าง Personal Access Token
+  rateLimitExceededHasSet: ตั้ง token ไว้แล้ว
+  rateLimitExceededRemoveToken: ลบ token
+  rateLimitExceededGitHubPAT: GitHub Personal Access Token
+  rateLimitExceededCopyPastePAT: วาง token ที่นี่
+  rateLimitExceededSaveToken: บันทึก token
+  errorTitle: โหลดข้อมูลไม่สำเร็จ
+  errorIntro: อ่านสถานะล่าสุดไม่ได้
+  errorText: ลองใหม่อีกครั้งในอีกสักครู่
+  errorHome: กลับหน้าแรก
+  pastScheduledMaintenance: การปิดปรับปรุงที่ผ่านมา
+  scheduledMaintenance: การปิดปรับปรุงที่นัดไว้
+  scheduledMaintenanceSummaryStarted: เริ่ม $DATE นาน $DURATION นาที
+  scheduledMaintenanceSummaryStarts: จะเริ่ม $DATE นาน $DURATION นาที
+  startedAt: เริ่มเมื่อ
+  startsAt: จะเริ่ม
+  duration: นาน
+  durationMin: $DURATION นาที
+  incidentCompleted: เสร็จแล้ว
+  incidentScheduled: นัดไว้
+  duration24H: 24 ชม.
+  duration7D: 7 วัน
+  duration30D: 30 วัน
+  duration1Y: 1 ปี
+  durationAll: ทั้งหมด
