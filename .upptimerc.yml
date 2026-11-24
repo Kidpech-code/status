@@ -8,6 +8,10 @@ repo: status
 assignees:
   - Kidpech-code
 
+# the repo's built-in Actions token (no personal token) may not edit topics or the description
+skipTopicsUpdate: true
+skipDescriptionUpdate: true
+
 sites:
   - name: เว็บ Office AI
     slug: ai
