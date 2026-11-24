@@ -1,7 +1,7 @@
 url: https://my-shift.twentcode.com/__local-ocr/health
-status: up
-code: 200
-responseTime: 293
-lastUpdated: 2026-11-24T01:43:36.206Z
+status: down
+code: 502
+responseTime: 806
+lastUpdated: 2026-11-24T06:52:28.089Z
 startTime: 2026-11-24T01:43:35.911Z
 generator: Upptime <https://github.com/upptime/upptime>
